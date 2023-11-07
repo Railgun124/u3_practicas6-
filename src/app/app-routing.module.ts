@@ -3,6 +3,10 @@ import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
   {
+    path: 'login',
+    loadChildren: () => import('./login/login.module').then( m => m.LoginPageModule)
+  },
+  {
     path: '',
     loadChildren: () => import('./tabs/tabs.module').then(m => m.TabsPageModule)
   },
@@ -17,7 +21,9 @@ const routes: Routes = [
   {
     path: 'delete-product/:i',
     loadChildren: () => import('./delete-product/delete-product.module').then( m => m.DeleteProductPageModule)
-  }
+  },
+ 
+
 
 
 ];
